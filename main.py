@@ -46,7 +46,7 @@ async def submit_exam(payload: dict):
         raise HTTPException(status_code=403, detail="Chữ ký không hợp lệ!")
     
     try:
-        payload.pop("signature", None) # Xóa chữ ký trước khi lưu
+        #payload.pop("signature", None) # Xóa chữ ký trước khi lưu
         
         safe_user = hashlib.sha256(user.encode('utf-8')).hexdigest()[:20]
         
